@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb:10.3
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+    volumes:
+      - "${MYSQL_BACKUP}:/backups:ro"
+
+  nebula8:
+    build: "${PROJECT_NEBULA8}"
+    image: nebula8
+    environment:
+      HOST: "db"
+      PORT: 3306
+      USER: "root"
+      PASSWORD: "root"
+      DBNAME: "nebula"
+

@@ -1,0 +1,7 @@
+
+COMPOSE_PROJECT_NAME=nebula8
+
+MYSQL_BACKUP=./var/backups
+
+# absolute path to the nebula8 local directory
+PROJECT_NEBULA8=
